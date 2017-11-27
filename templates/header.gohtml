@@ -1,0 +1,16 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {{if .FirstName}}
+    <title>{{.FirstName}} {{.SecondName}}</title>
+    {{else}}
+    <title>{{.Title}}</title>
+    {{end}}
+</head>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<body>
+  <!-- <img src="/assets/imgs/{{.}}">
+</body> -->
+{{end}}

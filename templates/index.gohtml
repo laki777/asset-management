@@ -1,0 +1,37 @@
+{{template "header" .}}
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<h2>WELCOME TO ASSET MANAGEMENT</h2>
+
+{{template "nav-main"}}
+
+<p>
+<p>
+
+<div class="mainborder">
+<form method="POST" action="/">
+  <div class="imgcontainer">
+    <img src="imgs/AssetManagement.jpg" alt="Asset_Management" class="mainimg">
+  </div>
+
+  <div class="container">
+    <label><b>ID</b></label>
+    <input type="text" placeholder="Enter ID" name="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="signupbtn" onclick="location.href='/signup';">Sign Up</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+</div>
+<p>
+<p>
+
+{{template "footer"}}

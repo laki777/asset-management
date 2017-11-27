@@ -1,0 +1,58 @@
+{{template "header" .}}
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<h2>ASSET MANAGEMENT</h2>
+
+{{template "nav-main-admin"}}
+
+<br>
+
+{{if .FirstName}}
+    <h2> {{.FirstName}} {{.SecondName}}, your information has been submitted successfully.</h2>
+{{end}}
+
+
+<div class="insert_mainborder">
+<form method="POST" action="/insert">
+
+  <div class="container">
+
+    <fieldset>
+      
+      <legend>Personal information:</legend>
+
+        <label><b>ID</b></label>
+        <input type="text" placeholder="Enter ID" name="username" required>
+
+        <label><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="firstname" required>
+
+        <label><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lastname" required>
+
+    </fieldset>
+
+    <br>
+    <br>
+
+    <fieldset>
+      <legend>Hardware and Software:</legend>
+
+        <label><b>Hardware:</b></label> <br>
+        <textarea name="hardware" rows="10" cols="100%" placeholder="Hardware" name="hardware" > </textarea> <br> <p>
+
+        <label><b>Software:</b></label> <br>
+        <textarea name="software" rows="10" cols="100%" placeholder="Software" name="software" > </textarea> <br> <p>
+    </fieldset>
+    <button type="submit">Insert Data</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+  </div>
+</form>
+</div>
+
+<br>
+
+{{template "footer"}}

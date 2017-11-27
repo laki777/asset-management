@@ -1,0 +1,63 @@
+{{template "header" .}}
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+<h2>SEARCH</h2>
+
+{{template "nav-main-admin"}}
+
+<p>
+<p>
+<body>
+
+<form id="search-form" onesubmit="return false">
+  <input type="search" />
+  <input type="submit" name="Search" onclick="submitSearch()">
+  <p>
+<p>
+
+</form>
+
+   <table width="100%">
+     <thead>
+       <tr style="text-align: left;">
+         <th width="10%">Username</th>
+         <th width="15%">First Name</th>
+         <th width="15%">Last Name</th>
+         <th width="30%">Hardware</th>
+         <th width="30%">Sowtware</th>
+       </tr>
+     </thead>
+   </table>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+      function submitSearch(){
+        $.ajax({
+          url:"/search",
+          method:"POST",
+          data: $("#search-form").serialize(),
+          success: function(rawData) {
+            var parsed = JSON.parse(rawData);
+            if(!parsed) return;
+
+            var searchResults = $("#search-results");
+            searchResults.empty();
+
+            parsed.forEach(function(result){
+              var row = $("<tr><td>" + result.Username + "</td><td>" + result.FirstName + "</td><td>" + result.LastName + "</td><td>" + result.Hardware + "</td><td>" + result.Sowtware + "</td></tr>");
+              searchResults.append(row);
+            }); 
+          }
+        });
+
+        return false;
+      }
+    </script>
+
+
+</body>
+<p>
+<p>
+{{template "footer"}}

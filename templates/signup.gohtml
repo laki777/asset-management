@@ -1,0 +1,50 @@
+{{template "header" .}}
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+<h2>SIGN UP PAGE</h2>
+
+{{template "nav-main"}}
+<div style="padding:0 16px;">
+<p>
+
+  <br>
+
+  <body>
+
+<div class="mainborder">
+<form method="POST" action="/signup">
+
+  <div class="container">
+    <label><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="firstname" required>
+
+    <label><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="lastname" required>
+
+    <label><b>ID</b></label>
+    <input type="text" placeholder="Enter ID" name="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <label><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="confirmpass" required>
+
+    <button type="submit">Sign Up</button>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+  </div>
+</form>
+</div>
+      <p>
+      <p>
+  </body>
+
+  <br>
+<p>
+
+</div>
+{{template "footer"}}
